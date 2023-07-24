@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../Component/Register.css'
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -33,23 +34,39 @@ const handleSubmit = (event) => {
 
   return (
 
-    <div>
+    <div id='reg-body'> 
+
+        <div id='reg-form'>
+
+            <div id='com-img'>
+                <h2>Welecome to Shoppers <br /> Stop</h2>
+                <p>Let's get you registered!</p>
+
+            </div>
+
+
         <form onSubmit={handleSubmit}>
-            <label htmlFor="">Name</label>
-            <input type="text" onChange={handlechange} name='name' /> <br />
+            {/* <label htmlFor="">Name</label> */}
+            <input type="text" onChange={handlechange} name='name' placeholder='Name*' /> <br />
 
-            <label htmlFor="">Email</label>
-           <input type="email" onChange={handlechange} name='email'  />  <br />
+            {/* <label htmlFor="">Email</label> */}
+           <input type="email" onChange={handlechange} name='email' placeholder='Email*'  />  <br />
 
-           <label htmlFor="">Password</label>
-           <input type='password' onChange={handlechange } name='password'/>  <br />
+           {/* <label htmlFor="">Password</label> */}
+           <input type='password' onChange={handlechange } name='password' placeholder='Password *'/>  <br />
 
            <input type="submit" />
+
+           <p className='reg-email'>Login using <u>Email</u></p>
 
            {/* <button>abc</button> */}
 
 
         </form>
+        </div>
+
+
+       
 
 
 

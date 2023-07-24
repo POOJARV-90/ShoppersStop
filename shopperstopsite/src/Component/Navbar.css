@@ -1,0 +1,16 @@
+#parent{
+    width: 100%;
+    border: 1px solid red;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+#parent>div{
+    width: 28%;
+    border: 1px solid red;
+}
+
+#parent>div:nth-child(3){
+    display: flex;
+    justify-content: space-around;
+}
