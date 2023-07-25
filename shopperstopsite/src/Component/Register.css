@@ -16,7 +16,7 @@
 #reg-form{
     width: 30%;
     height: 100%;
-     border: 1px solid red;
+     /* border: 1px solid red; */
      position: absolute;
      right: 0%;
      background-color: white;
@@ -31,7 +31,7 @@
     font-size: x-large;
     width: 100%;
     height: 220px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-color: #000000;
     background-repeat: no-repeat;
     background-position: 18% 100%;

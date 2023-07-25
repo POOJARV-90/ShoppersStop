@@ -1,9 +1,14 @@
 import React from 'react'
+import '../Component/Home.css'
 
 const Home = () => {
   return (
-    
-    <div>Home</div>
+    <>
+    <div id='Home-body'>
+
+         dvnxvmnvm
+    </div>
+    </>
   )
 }
 
