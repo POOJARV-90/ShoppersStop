@@ -5,6 +5,8 @@ import Home from './Component/Home';
 import Register from './Component/Register';
 import Login from './Component/Login';
 import Navbar from './Component/Navbar';
+import Multipleproduct from './Component/Multipleproduct';
+import Singleproduct from './Component/Singleproduct';
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
         <Route exact path='/' element={<Home/>}/>
         <Route exact path='/Register' element={<Register/>}/>
         <Route exact path='/Login' element={<Login/>}/>
-        
+        <Route exact path='/Multipleproduct' element={<Multipleproduct/>}/>
+        <Route exact path='/Singleproduct/:id' element={<Singleproduct/>}/>
 
 
 
