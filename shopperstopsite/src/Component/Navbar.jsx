@@ -54,7 +54,7 @@ const Navbar = () => {
 
 
       </div>
-      <div>
+      <div onClick={()=>router("/")} >
         <img src="https://prodstatic.shoppersstop.com/_ui/updated_path/images/shopperstopimgaes_web/newLogo.svg" alt="" />
       </div>
       <div id='all-sections'>

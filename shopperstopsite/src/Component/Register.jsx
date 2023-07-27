@@ -26,7 +26,7 @@ const handleSubmit = (event) => {
         localStorage.setItem("Users",JSON.stringify(array));
         setUserdata({})
         alert("Registerd succesfully")
-        router('/Login')
+        router('/')
     }else{
         alert("please submit the require details")
     }

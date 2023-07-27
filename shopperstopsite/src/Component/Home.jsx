@@ -84,7 +84,7 @@ const Home = () => {
      <span>₹1099</span>
      <span>50%off</span>
 
-     <p>add to bag</p>
+     <p>Add to bag</p>
 
   </div>
   <div>
@@ -95,7 +95,7 @@ const Home = () => {
      <span>₹1099</span>
      <span>50%off</span>
 
-     <p>add to bag</p>
+     <p>Add to bag</p>
   </div>
   <div>
   <img src="https://sslimages.shoppersstop.com/sys-master/images/h3d/h0c/28158196056094/INFLWDSTAR_STONE.jpg_136Wx204H" alt="" />
@@ -105,7 +105,7 @@ const Home = () => {
      <span>₹1099</span>
      <span>50%off</span>
 
-     <p>add to bag</p>
+     <p>Add to bag</p>
   </div>
   <div>
   <img src="https://sslimages.shoppersstop.com/sys-master/images/h8c/hf2/15002510229534/205523388_WHITE.jpg_136Wx204H" alt="" />
@@ -115,7 +115,7 @@ const Home = () => {
      <span>₹1099</span>
      <span>50%off</span>
 
-     <p>add to bag</p>
+     <p>Add to bag</p>
   </div>
 
   <div>
@@ -126,7 +126,7 @@ const Home = () => {
      <span>₹1099</span>
      <span>50%off</span>
 
-     <p>add to bag</p>
+     <p>Add to bag</p>
   </div>
 
 

@@ -47,14 +47,14 @@ const Multipleproduct = () => {
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor=""> SHIRTS (5,064)</label>
             </p>
           </div>
 
           <div>
             <h5>
               {" "}
-              <span>SUB-CATEGORIES</span>{" "}
+              <span>BRANDS</span>{" "}
               <span>
                 <i class="fa-solid fa-chevron-down"></i>
               </span>{" "}
@@ -68,26 +68,26 @@ const Multipleproduct = () => {
             </div>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">ADIDAS  (65)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">AEROPOSTALE  (2)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">ALCIS  (3)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">ALLEN SOLLY  (78)</label>
             </p>
           </div>
 
           <div>
             <h5>
               {" "}
-              <span>SUB-CATEGORIES</span>{" "}
+              <span>OFFERS</span>{" "}
               <span>
                 <i class="fa-solid fa-chevron-down"></i>
               </span>{" "}
@@ -101,26 +101,34 @@ const Multipleproduct = () => {
             </div>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">FLAT 30% OFF  (47)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">FLAT 70% OFF  (129)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">FLAT 40% OFF  (38)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">FLAT 30% OFF   (234)</label>
+            </p>
+            <p>
+              <input type="checkbox" />{" "}
+              <label htmlFor="">FLAT 50% OFF  (38)</label>
+            </p>
+            <p>
+              <input type="checkbox" />{" "}
+              <label htmlFor="">FLAT 70% OFF   (234)</label>
             </p>
           </div>
 
           <div>
             <h5>
               {" "}
-              <span>SUB-CATEGORIES</span>{" "}
+              <span>SIZE</span>{" "}
               <span>
                 <i class="fa-solid fa-chevron-down"></i>
               </span>{" "}
@@ -134,19 +142,19 @@ const Multipleproduct = () => {
             </div>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">1  (54)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">11-12 Y  (1)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">13-14 Y  (1)</label>
             </p>
             <p>
               <input type="checkbox" />{" "}
-              <label htmlFor="">CASUAL SHIRTS (5,764)</label>
+              <label htmlFor="">15-16 Y  (1)</label>
             </p>
           </div>
         </div>
@@ -167,21 +175,21 @@ const Multipleproduct = () => {
           <div>
             <h5 className="FILTER">
               {" "}
-              <span>SORT BY:POPULAR</span>{" "}
+              <span>SLEEVES</span>{" "}
               <span>
                 <i class="fa-solid fa-chevron-down"></i>
               </span>{" "}
             </h5>
             <h5 className="FILTER">
               {" "}
-              <span>SORT BY:POPULAR</span>{" "}
+              <span>NECKLINE</span>{" "}
               <span>
                 <i class="fa-solid fa-chevron-down"></i>
               </span>{" "}
             </h5>
             <h5 className="FILTER">
               {" "}
-              <span>SORT BY:POPULAR</span>{" "}
+              <span>OCCASION</span>{" "}
               <span>
                 <i class="fa-solid fa-chevron-down"></i>
               </span>{" "}

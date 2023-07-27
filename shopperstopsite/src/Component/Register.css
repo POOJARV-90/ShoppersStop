@@ -11,9 +11,11 @@
     background-color: rgba(136, 135, 135, 0.5);
     opacity: 100%;
     position: relative;
+    z-index: 999;
 }
 
 #reg-form{
+    /* z-index: 999; */
     width: 30%;
     height: 100%;
      /* border: 1px solid red; */

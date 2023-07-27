@@ -54,14 +54,14 @@
 
 #top-selling-pro-slide>div{
     width: 18%;
-    /* height: 500px; */
+    height: 380px;
     /* border: 1px solid red; */
     box-shadow: 1px 1px 5px #c2bebe;
 }
 
 #top-selling-pro-slide>div>img{
     width: 100%;
-    height: 68%;
+    height: 60%;
 }
 #top-selling-pro-slide>div>h5{
     font-weight: 500;
