@@ -1,47 +1,58 @@
 import React, { useEffect, useState } from "react";
 import "../Component/Singleproduct.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Singleproduct = () => {
-  const [isuserlogin, setisuserLogin] = useEffect(false);
   const [product, setProduct] = useState([]);
   const [singleproduct, setSingleproduct] = useState({});
-  const [currentUserEmail, setCurrentUserEmail] = useState("");  //new
+  const [isuserLogin, setisUserLogin] = useState(false);
+  const [currentUserEmail, setCurrentUserEmail] = useState("");
+
   const { id } = useParams();
+  const router = useNavigate();
   console.log(product);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      // .then(json=>console.log(json))
       .then((json) => setProduct(json));
   }, []);
 
   useEffect(() => {
     if (id && product.length) {
       const productdata = product.find((product) => product.id == id);
-      // console.log(productdata,"singlepoduct")
       setSingleproduct(productdata);
     }
-
-    console.log(singleproduct, "singlepoduct");
   }, [id, product]);
-// ..............newww..........
+
   useEffect(() => {
-    var user = JSON.parse(localStorage.setItem("CurrentUser"));
+    var user = JSON.parse(localStorage.getItem("CurrentUser")); // Corrected localStorage.getItem() usage
     if (user) {
-      setisuserLogin(true);
-      setCurrentUserEmail(user.email)
+      setisUserLogin(true);
+      setCurrentUserEmail(user.email);
     }
   }, []);
 
-  function addCart() {
-    if (isuserlogin) {
+  console.log(singleproduct, "singleproduct");
 
+  function addCart() {
+    if (isuserLogin) {
+      const allusers = JSON.parse(localStorage.getItem("Users"));
+      for (var i = 0; i < allusers.length; i++) {
+        if (allusers[i].email === currentUserEmail) {
+          allusers[i]?.cart.push(singleproduct);
+          localStorage.setItem("Users", JSON.stringify(allusers));
+          break;
+        }
+      }
+      alert("Product added to your cart");
+      router("/Multipleproduct");
     } else {
-      alert("login first");
+      alert("You cannot add a product before login");
     }
   }
 
+    
   return (
     <div id="main-body">
       <p>
@@ -81,7 +92,6 @@ const Singleproduct = () => {
             <s>144$</s>
           </span>
           <span>50% off</span>
-
           <p>
             Find your perfect <u>match! Ask your Expert Advisor</u>{" "}
           </p>
@@ -118,7 +128,8 @@ const Singleproduct = () => {
                 alt=""
               />
             </span>
-            <button onClick={addCart}>ADD TO BAG</button>
+            
+            <button onClick={addCart} >ADD TO BAG</button>
           </div>
         </div>
       </div>

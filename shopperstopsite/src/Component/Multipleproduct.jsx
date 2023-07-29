@@ -13,8 +13,8 @@ const Multipleproduct = () => {
   }, []);
 
   const redirect = (id) => {
-    alert("working")
-    // console.log(id,"id")
+    // alert("working")
+    console.log(id,"id")
     router(`/Singleproduct/${id}`)
 
   }

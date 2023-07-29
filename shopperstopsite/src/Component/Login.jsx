@@ -26,20 +26,17 @@ const Login = () => {
         ) {
           flag = true;
           // login(users[i]);
-          // alert("login succesfull")
-          // localStorage.setItem(("CurrentUser"),JSON.stringify(userdata));
-          // setUserdata({email:"",password:""})
-
+          alert("login succesfull")
+          localStorage.setItem(("CurrentUser"),JSON.stringify(userdata));
+          setUserdata({email:"",password:""})
+         
           break;
         }
       }
       if (flag == false) {
         return alert("Please check credentials.");
       }
-      alert("login succesfull");
-      localStorage.setItem("CurrentUser", JSON.stringify(userdata));
-      setUserdata({ email: "", password: "" });
-      router("/");
+      
     } else {
       alert("Please submit all details");
     }
