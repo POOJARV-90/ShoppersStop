@@ -8,6 +8,7 @@ import Navbar from './Component/Navbar';
 import Multipleproduct from './Component/Multipleproduct';
 import Singleproduct from './Component/Singleproduct';
 import Footer from './Component/Footer';
+import Cart from './Component/Cart';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route exact path='/Login' element={<Login/>}/>
         <Route exact path='/Multipleproduct' element={<Multipleproduct/>}/>
         <Route exact path='/Singleproduct/:id' element={<Singleproduct/>}/>
+        <Route exact path='/Cart' element={<Cart/>}/>
+
 
       </Routes>
 

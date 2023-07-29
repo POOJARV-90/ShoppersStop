@@ -17,10 +17,11 @@ const handleSubmit = (event) => {
     event.preventDefault();
     if(userdata.name && userdata.email && userdata.password){
         const array = JSON.parse(localStorage.getItem("Users")) || [];
-        const userobject ={
+        const userobject = {
             name : userdata.name,
             email :userdata.email,
             password: userdata.password,
+            cart : []
         }
         array.push(userobject);
         localStorage.setItem("Users",JSON.stringify(array));
