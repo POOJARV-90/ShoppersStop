@@ -67,7 +67,7 @@ const Navbar = () => {
            <span>
           <img src="data:image/svg+xml,%0A%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.593 21.48c.117.09.26.14.407.14.147 0 .29-.05.407-.14 3.706-2.88 6.26-5.36 8.046-7.807 2.28-3.126 2.8-6.013 1.547-8.58-.893-1.833-3.467-3.32-6.46-2.46A6.58 6.58 0 0 0 12 5.147a6.58 6.58 0 0 0-3.54-2.514c-3-.873-5.567.627-6.46 2.46-1.253 2.567-.733 5.454 1.547 8.58 1.786 2.447 4.34 4.927 8.046 7.807zM3.2 5.673A3.933 3.933 0 0 1 6.753 3.72c.452.002.9.067 1.334.193a5.287 5.287 0 0 1 3.293 2.8.667.667 0 0 0 1.233 0 5.333 5.333 0 0 1 3.294-2.8c2.226-.626 4.226.434 4.893 1.767 1.033 2.113.573 4.473-1.427 7.207A38.087 38.087 0 0 1 12 20.107a38.088 38.088 0 0 1-7.373-7.227C2.633 10.153 2.167 7.793 3.2 5.673z' fill='%23000'/%3E%3C/svg%3E%0A" alt="" />
         </span>
-        <span>
+        <span onClick={()=>router("/Cart")}>
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath d='M24 0H0v24h24V0z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.546 6.522c.24-.215.552-.335.875-.335H19.58a1.312 1.312 0 0 1 1.304 1.168l1.334 12a1.311 1.311 0 0 1-1.305 1.457H3.088a1.311 1.311 0 0 1-1.305-1.457l1.334-12c.035-.321.188-.618.429-.833zm.875.79a.187.187 0 0 0-.186.167l-1.333 12a.187.187 0 0 0 .186.209h17.824a.188.188 0 0 0 .186-.209l-1.333-12a.187.187 0 0 0-.186-.167H4.42z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 2.563A3.187 3.187 0 0 0 8.812 5.75v3a.563.563 0 0 1-1.124 0v-3a4.312 4.312 0 1 1 8.625 0v3a.562.562 0 1 1-1.125 0v-3A3.187 3.187 0 0 0 12 2.562z' fill='%23000'/%3E%3C/svg%3E" alt="" />
         </span>
         {userdata?.email?
@@ -83,7 +83,7 @@ const Navbar = () => {
         { display &&
                      <div id='menu-down' onMouseLeave={handleMouseLeave}>
                       <p> <i class="fa-solid fa-crown"></i> MY Profile</p>
-                      <p> <i class="fa-solid fa-cart-shopping"></i> MY Order</p>
+                      <p onClick={()=>router("/Cart")}> <i class="fa-solid fa-cart-shopping"></i> MY Order</p>
                       <p> <i class="fa-regular fa-user"></i> MY Account</p>
                       <p onClick={logout} > <i class="fa-solid fa-right-from-bracket"></i>Logout</p>
 
