@@ -23,7 +23,7 @@ const Cart = () => {
       }
     } else {
       alert("Please login to watch all cart products.");
-      router('/Login')
+      router("/Login");
     }
   }, []);
 
@@ -67,10 +67,11 @@ const Cart = () => {
       <div id="cart-all-items">
         {userCart.length === 0 ? (
           <div id="cart-all-items-left">
-            <div id="no-product-in-cart"> 
-            Your cart needs some love <br />
-            <small>Fill your cart with the best of Shoppers Stop</small> <br />
-            <u onClick={()=>router("/Multipleproduct")}>Start Shopping</u>
+            <div id="no-product-in-cart">
+              Your cart needs some love <br />
+              <small>Fill your cart with the best of Shoppers Stop</small>{" "}
+              <br />
+              <u onClick={() => router("/Multipleproduct")}>Start Shopping</u>
             </div>
           </div>
         ) : (
@@ -112,31 +113,102 @@ const Cart = () => {
           </div>
         )}
 
+        <div id="cart-all-items-right">
+          <h2>Order Summary</h2>
+          <p>
+            <span>Sub total</span> <span> {finalPrice + finalPrice} $</span>
+          </p>
+          <p>
+            <span>Delivery charges*</span> <span>Free</span>
+          </p>
+          <p>
+            <span>Offer discount(20%)</span> <span>{finalPrice / 2} $</span>
+          </p>
+          <h1>
+            <span>Total Price</span>{" "}
+            <span>
+              {" "}
+              {finalPrice + finalPrice - finalPrice / 2}{" "}
+              <b style={{ color: "#ff7635" }}>$</b>
+            </span>
+          </h1>
+          <button onClick={buyProducts} id="button">
+            Buy Now
+          </button>
+        </div>
+      </div>
+      <div id="succesjation">
+        <h1>You may also like</h1>
+      <div id="top-selling-pro-slide">
+        <div>
+          <img
+            src="https://sslimages.shoppersstop.com/sys-master/images/hcc/h67/14999824990238/205523390_BLACK.jpg_136Wx204H"
+            alt=""
+          />
+          <h5>Levis</h5>
+          <p>Women's Round Neck Graphic Print T-Shirt</p>
+          <span>₹999</span>
+          <span>₹1099</span>
+          <span>50%off</span>
+
+          <p>Add to bag</p>
+        </div>
+        <div>
+          <img
+            src="https://sslimages.shoppersstop.com/sys-master/images/hf9/h9c/26734120435742/WFIF-FTW6077_NoColour.jpg_136Wx204H"
+            alt=""
+          />
+          <h5>Levis</h5>
+          <p>Women's Round Neck Graphic Print T-Shirt</p>
+          <span>₹999</span>
+          <span>₹1099</span>
+          <span>50%off</span>
+
+          <p>Add to bag</p>
+        </div>
+        <div>
+          <img
+            src="https://sslimages.shoppersstop.com/sys-master/images/h3d/h0c/28158196056094/INFLWDSTAR_STONE.jpg_136Wx204H"
+            alt=""
+          />
+          <h5>Levis</h5>
+          <p>Women's Round Neck Graphic Print T-Shirt</p>
+          <span>₹999</span>
+          <span>₹1099</span>
+          <span>50%off</span>
+
+          <p>Add to bag</p>
+        </div>
+        <div>
+          <img
+            src="https://sslimages.shoppersstop.com/sys-master/images/h8c/hf2/15002510229534/205523388_WHITE.jpg_136Wx204H"
+            alt=""
+          />
+          <h5>Levis</h5>
+          <p>Women's Round Neck Graphic Print T-Shirt</p>
+          <span>₹999</span>
+          <span>₹1099</span>
+          <span>50%off</span>
+
+          <p>Add to bag</p>
+        </div>
+
+        <div>
+          <img
+            src="https://sslimages.shoppersstop.com/sys-master/images/hb0/h2f/27857327587358/206837457_RED.jpg_136Wx204H"
+            alt=""
+          />
+          <h5>Levis</h5>
+          <p>Women's Round Neck Graphic Print T-Shirt</p>
+          <span>₹999</span>
+          <span>₹1099</span>
+          <span>50%off</span>
+
+          <p>Add to bag</p>
+        </div>
+
         
-          <div id="cart-all-items-right">
-            <h2>Order Summary</h2>
-            <p>
-              <span>Sub total</span> <span> {finalPrice + finalPrice} $</span>
-            </p>
-            <p>
-              <span>Delivery charges*</span> <span>Free</span>
-            </p>
-            <p>
-              <span>Offer discount(20%)</span> <span>{finalPrice / 2}</span>
-            </p>
-            <h1>
-              <span>Total Price</span>{" "}
-              <span>
-                {" "}
-                {finalPrice + finalPrice - finalPrice / 2}{" "}
-                <b style={{ color: "#ff7635" }}>$</b>
-              </span>
-            </h1>
-            <button onClick={buyProducts} id="button">
-              Buy Now
-            </button>
-          </div>
-        
+      </div>
       </div>
     </div>
   );
