@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../Component/Login.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import axios from "axios";
+import { Authcontext } from "./Context/Authcontext";
 
 const Login = () => {
+
+  const {state , dispatch} = useContext(Authcontext)
   const [userdata, setUserdata] = useState({ email: "", password: "" });
   const router = useNavigate();
 
@@ -13,35 +18,35 @@ const Login = () => {
   const hangleChange = (event) => {
     setUserdata({ ...userdata, [event.target.name]: event.target.value });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (userdata.email && userdata.password) {
+    if ( userdata.email && userdata.password) {
       
-      const users = JSON.parse(localStorage.getItem("Users"));
+            const response = await axios.post("http://localhost:8000/login", { userdata });
+            if (response.data.success) {
+            //   console.log(response.data,"data");
+            //    const token  = response.data.token;
+            //    const user = response.data.user;
+            // // console.log(user,"userdata");
+            //   await login(token , user)
 
-      var flag = false;
-      for (var i = 0; i < users.length; i++) {
-        if (
-          users[i].email == userdata.email &&
-          users[i].password == userdata.password
-        ) {
-          flag = true;
-          // login(users[i]);
-          alert("login succesfull")
-          localStorage.setItem(("CurrentUser"),JSON.stringify(userdata));
-          setUserdata({email:"",password:""})
-         
-          break;
-        }
-      }
-      if (flag == false) {
-        return alert("Please check credentials.");
-      }
-      
+            dispatch({
+              type: 'LOGIN',
+              payload: response.data.user
+          })
+          localStorage.setItem("token", JSON.stringify(response.data.token))
+                setUserdata({ email: "", password: "" })
+                router('/')
+                toast.success(response.data.message)
+            } else {
+                toast.error(response.data.message)
+            }
+
+       
     } else {
-      alert("Please submit all details");
+        toast.error("All fields are mandtory.")
     }
-  };
+}
 
   return (
     <div id="log-body">

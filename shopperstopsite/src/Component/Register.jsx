@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 import '../Component/Register.css'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
 
-const [userdata , setUserdata] = useState({name:"",email:"",password :""});
+const [userdata , setUserdata] = useState({name:"",email:"",password :"" , confirmpassword:"" , role:"Buyer"});
+
+const handleRole = (event) =>{
+    setUserdata({...userdata,"role":event.target.value})
+  }
 
 const router = useNavigate()
 
@@ -13,23 +19,24 @@ const handlechange = (event) => {
 }
 console.log(userdata);
 
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
     event.preventDefault();
-    if(userdata.name && userdata.email && userdata.password){
-        const array = JSON.parse(localStorage.getItem("Users")) || [];
-        const userobject = {
-            name : userdata.name,
-            email :userdata.email,
-            password: userdata.password,
-            cart : []
+    if (userdata.name && userdata.email && userdata.password && userdata.confirmpassword && userdata.role) {
+        if (userdata.password === userdata.confirmpassword) {
+            const response = await axios.post("http://localhost:8000/register", { userdata });
+            if (response.data.success) {
+                setUserdata({ name: "", email: "", password: "", confirmpassword: "", role: "Buyer" })
+                router('/Login')
+                toast.success(response.data.message)
+            } else {
+                toast.error(response.data.message)
+            }
+
+        } else {
+            toast.error("Password and Confirm Password not Matched.")
         }
-        array.push(userobject);
-        localStorage.setItem("Users",JSON.stringify(array));
-        setUserdata({})
-        alert("Registerd succesfully")
-        router('/')
-    }else{
-        alert("please submit the require details")
+    } else {
+        toast.error("All fields are mandtory.")
     }
 }
 
@@ -45,16 +52,26 @@ const handleSubmit = (event) => {
 
             </div>
 
-
-        <form onSubmit={handleSubmit}>
+            {/* onSubmit={handleSubmit} */}
+        <form  onSubmit={handleSubmit} >
             {/* <label htmlFor="">Name</label> */}
-            <input type="text" onChange={handlechange} name='name' placeholder='Name*' /> <br />
+            <input type="text" onChange={handlechange} name='name' placeholder='Name*' value={userdata.name} /> <br />
 
             {/* <label htmlFor="">Email</label> */}
-           <input type="email" onChange={handlechange} name='email' placeholder='Email*'  />  <br />
+           <input type="email" onChange={handlechange} name='email' placeholder='Email*'  />  
+           <br />
+
+<label>ROLE</label>   
+<select id="select" onChange={handleRole}>
+  <option value="Buyer">Buyer</option>
+  <option value="Seller">Seller</option>
+</select> <br />
+
 
            {/* <label htmlFor="">Password</label> */}
            <input type='password' onChange={handlechange } name='password' placeholder='Password *'/>  <br />
+
+           <input type='confirmpassword' onChange={handlechange } name='confirmpassword' placeholder='confirm password *'/>  <br />
 
            <input type="submit" />
 
