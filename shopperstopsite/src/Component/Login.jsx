@@ -11,10 +11,6 @@ const Login = () => {
   const [userdata, setUserdata] = useState({ email: "", password: "" });
   const router = useNavigate();
 
-  // const close = (props) => {
-  // props.setShowLogin(false);
-  // props.setDisplay(false);
-  // }
   const hangleChange = (event) => {
     setUserdata({ ...userdata, [event.target.name]: event.target.value });
   };
@@ -50,7 +46,9 @@ const Login = () => {
 
   return (
     <div id="log-body">
+      
       <div id="log-form">
+     
         <div id="com-log-img">
           <h2>Login/Signup</h2>
           <p>for a tailored experience</p>
@@ -74,7 +72,7 @@ const Login = () => {
           <br />
           <input type="submit" value="Continue" />
           <p className="reg-email">
-            Login using <u>Email</u>
+            Not registered ret <u onClick={()=>router("/register")}>Click here</u>
           </p>
           <div id="login-with">
             <img

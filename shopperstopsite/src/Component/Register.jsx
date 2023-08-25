@@ -61,23 +61,23 @@ const handleSubmit = async (event) => {
            <input type="email" onChange={handlechange} name='email' placeholder='Email*'  />  
            <br />
 
-<label>ROLE</label>   
+<label style={{marginLeft:"45%"}} ></label>   
 <select id="select" onChange={handleRole}>
   <option value="Buyer">Buyer</option>
   <option value="Seller">Seller</option>
 </select> <br />
 
 
-           {/* <label htmlFor="">Password</label> */}
+         
            <input type='password' onChange={handlechange } name='password' placeholder='Password *'/>  <br />
 
-           <input type='confirmpassword' onChange={handlechange } name='confirmpassword' placeholder='confirm password *'/>  <br />
+           <input type='password' onChange={handlechange } name='confirmpassword' placeholder='confirm password *'/>  <br />
 
            <input type="submit" />
 
            <p className='reg-email'>Login using <u>Email</u></p>
 
-           {/* <button>abc</button> */}
+        
 
 
         </form>
